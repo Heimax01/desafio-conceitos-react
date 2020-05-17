@@ -15,7 +15,7 @@ function App() {
       setRepositories(response.data)
     })
 
-  }, [repositories])
+  }, [])
 
   async function handleAddRepository() {
     
@@ -37,7 +37,7 @@ function App() {
     const response = await api.delete(`repositories/${id}`)
     
     
-    setRepositories([...repositories])
+    setRepositories([...repositories.filter(repository => repository.id !== id)])
 
 
 
